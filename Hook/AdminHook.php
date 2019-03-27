@@ -28,9 +28,10 @@ class AdminHook extends BaseHook
     {
         if (1 == HookAdminHome::getConfigValue(HookAdminHome::ACTIVATE_STATS, 1)) {
             $event->add($this->render('block-statistics.html'));
-        } else {
-            $event->add($this->render('hook-admin-home-config.html'));
         }
+
+        $event->add($this->render('hook-admin-home-config.html'));
+
     }
 
     public function blockStatisticsJs(HookRenderEvent $event)
